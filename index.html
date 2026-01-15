@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Insights | Berita Dunia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white">
+
+    <header class="border-b-4 border-black py-6 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col items-center">
+            <h1 class="font-serif text-5xl md:text-7xl font-black italic tracking-tighter mb-4">GLOBAL INSIGHTS</h1>
+            <div class="w-full flex justify-between items-center border-t border-gray-200 pt-4">
+                <nav class="hidden md:flex space-x-6 text-xs font-bold uppercase">
+                    <a href="#" class="nav-link" data-filter="all">Semua</a>
+                    <a href="#" class="nav-link" data-filter="politik">Politik</a>
+                    <a href="#" class="nav-link" data-filter="teknologi">Teknologi</a>
+                    <a href="#" class="nav-link" data-filter="ekonomi">Ekonomi</a>
+                </nav>
+                <input type="text" id="main-search" placeholder="Cari artikel..." class="border-b border-black text-sm px-2 focus:outline-none">
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <div class="lg:col-span-8 space-y-12">
+                <article class="news-item" data-category="teknologi">
+                    <a href="siber.html">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800" class="w-full h-[450px] object-cover mb-4">
+                        <h2 class="font-serif text-4xl font-bold hover:underline">Keamanan Siber Global: Ancaman AI di Tahun 2026</h2>
+                        <p class="text-gray-600 mt-2 italic">Analisis mendalam mengenai serangan ransomware berbasis algoritma cerdas.</p>
+                    </a>
+                </article>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <article class="news-item" data-category="politik">
+                        <a href="pemilu.html">
+                            <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=500" class="w-full h-48 object-cover mb-2">
+                            <h3 class="font-serif text-xl font-bold">Pemilu Serentak di 50 Negara Tahun Ini</h3>
+                        </a>
+                    </article>
+                    <article class="news-item" data-category="ekonomi">
+                        <a href="cripto.html">
+                            <img src="https://images.unsplash.com/photo-1611974714158-f89d0ca1c9a6?w=500" class="w-full h-48 object-cover mb-2">
+                            <h3 class="font-serif text-xl font-bold">Kripto Generasi 3: Revolusi Transaksi Instan</h3>
+                        </a>
+                    </article>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4 border-l border-gray-100 pl-0 lg:pl-8">
+                <h4 class="font-bold border-b-2 border-red-600 inline-block mb-6 uppercase text-sm">Terhangat</h4>
+                <div class="space-y-6">
+                    <article class="news-item flex gap-4" data-category="teknologi">
+                        <span class="text-2xl font-serif text-gray-300">04</span>
+                        <div><a href="04.html" class="font-bold hover:text-red-600">Terobosan Baterai Solid-State Mulai Produksi Massal.</a></div>
+                    </article>
+                    <article class="news-item flex gap-4" data-category="ekonomi">
+                        <span class="text-2xl font-serif text-gray-300">05</span>
+                        <div><a href="inflasi.html" class="font-bold hover:text-red-600">Inflasi Menurun di Kawasan Uni Eropa.</a></div>
+                    </article>
+                    <article class="news-item flex gap-4" data-category="politik">
+                        <span class="text-2xl font-serif text-gray-300">06</span>
+                        <div><a href="penulis.html" class="font-bold hover:text-red-600">Gencatan Senjata Dicapai di Konflik Perbatasan Asia.</a></div>
+                    </article>
+                    <article class="news-item flex gap-4" data-category="teknologi">
+                        <span class="text-2xl font-serif text-gray-300">07</span>
+                        <div><a href="nasa.html" class="font-bold hover:text-red-600">NASA Temukan Sinyal Radio Misterius dari Proxima Centauri.</a></div>
+                    </article>
+                    <article class="news-item flex gap-4" data-category="politik">
+                        <span class="text-2xl font-serif text-gray-300">08</span>
+                        <div><a href="undang.html" class="font-bold hover:text-red-600">Undang-Undang Lingkungan Baru Disahkan.</a></div>
+                    </article>
+                    <article class="news-item flex gap-4" data-category="ekonomi">
+                        <span class="text-2xl font-serif text-gray-300">09</span>
+                        <div><a href="saham.html" class="font-bold hover:text-red-600">Saham Startup Pendidikan Melonjak Tajam.</a></div>
+                    </article>
+                    <article class="news-item flex gap-4" data-category="teknologi">
+                        <span class="text-2xl font-serif text-gray-300">10</span>
+                        <div><a href="smartphone.html" class="font-bold hover:text-red-600">Smartphone Tanpa Layar Mulai Diminati.</a></div>
+                    </article>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

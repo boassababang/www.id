@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Insights | Berita Dunia Terpercaya</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS INTEGRASI DALAM SATU TUBUH */
+        :root {
+            --primary: #000000;
+            --accent: #d00000;
+            --paper: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--paper);
+            color: var(--primary);
+            overflow-x: hidden;
+        }
+
+        .font-serif { font-family: 'Playfair Display', serif; }
+
+        /* Ticker Animation */
+        .ticker-wrap {
+            background: var(--primary);
+            color: white;
+            padding: 8px 0;
+            overflow: hidden;
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .ticker-scroll {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll 30s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* News Card Effects */
+        .news-item {
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1.5rem;
+        }
+        .news-item:hover { opacity: 0.8; transform: translateY(-2px); }
+        
+        /* Dropcap */
+        .first-letter::first-letter {
+            float: left;
+            font-size: 4rem;
+            line-height: 1;
+            font-weight: 900;
+            padding-right: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Search Bar Focus */
+        #search-input:focus { width: 250px; border-color: var(--accent); }
+    </style>
+</head>
+<body>
+
+    <div class="ticker-wrap">
+        <div class="ticker-scroll">
+            +++ LIVE: Pemilu Serentak di 50 Negara Dimulai Hari Ini +++ Kripto Generasi 3 Meluncur: Revolusi Transaksi Instan Global +++ Inflasi Uni Eropa Menurun Tajam +++ Keamanan Siber: Ancaman AI 2026 +++
+        </div>
+    </div>
+
+    <header class="max-w-7xl mx-auto px-4 py-10 border-b-4 border-black">
+        <div class="flex flex-col items-center">
+            <p class="text-[10px] font-bold tracking-[0.5em] uppercase text-gray-400 mb-4">Kamis, 15 Januari 2026</p>
+            <h1 class="font-serif text-5xl md:text-8xl font-black italic tracking-tighter">GLOBAL INSIGHTS</h1>
+            
+            <nav class="w-full mt-8 flex flex-col md:flex-row justify-between items-center border-t border-gray-100 pt-6 gap-4">
+                <div class="flex space-x-6 text-xs font-bold uppercase tracking-widest">
+                    <button onclick="filterCat('all')" class="hover:text-red-600">Terbaru</button>
+                    <button onclick="filterCat('politik')" class="hover:text-red-600">Politik</button>
+                    <button onclick="filterCat('ekonomi')" class="hover:text-red-600">Ekonomi</button>
+                    <button onclick="filterCat('siber')" class="hover:text-red-600">Siber</button>
+                </div>
+                <div class="relative">
+                    <input type="text" id="search-input" placeholder="CARI BERITA..." class="border-b border-black text-[10px] py-1 px-2 outline-none transition-all duration-300 w-32 md:w-48">
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <div class="lg:col-span-8">
+                
+                <article class="news-item mb-12 border-none" data-category="siber">
+                    <a href="penulis.html">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800" class="w-full h-[450px] object-cover mb-6">
+                        <span class="text-red-600 font-bold text-xs uppercase tracking-widest">Laporan Khusus</span>
+                        <h2 class="font-serif text-4xl md:text-6xl font-bold leading-tight mt-2 mb-4">Keamanan Siber Global: Ancaman AI di Tahun 2026</h2>
+                        <p class="text-xl text-gray-500 italic first-letter">Analisis mendalam mengenai serangan ransomware berbasis algoritma cerdas yang mulai mengancam kedaulatan digital berbagai negara maju.</p>
+                    </a>
+                </article>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <article class="news-item" data-category="politik">
+                        <a href="penulis.html">
+                            <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=500" class="w-full h-48 object-cover mb-4">
+                            <span class="text-[10px] font-bold uppercase text-gray-400">Politik Dunia</span>
+                            <h3 class="font-serif text-2xl font-bold mt-1">Pemilu Serentak di 50 Negara Tahun Ini</h3>
+                        </a>
+                    </article>
+
+                    <article class="news-item" data-category="ekonomi">
+                        <a href="penulis.html">
+                            <img src="https://images.unsplash.com/photo-1611974714158-f89d0ca1c9a6?w=500" class="w-full h-48 object-cover mb-4">
+                            <span class="text-[10px] font-bold uppercase text-gray-400">Ekonomi Digital</span>
+                            <h3 class="font-serif text-2xl font-bold mt-1">Kripto Generasi 3: Revolusi Transaksi Instan</h3>
+                        </a>
+                    </article>
+                </div>
+            </div>
+
+            <aside class="lg:col-span-4 border-l border-gray-100 pl-0 lg:pl-10">
+                <h4 class="font-bold border-b-2 border-black pb-1 mb-6 text-sm uppercase">Terpopuler</h4>
+                
+                <div class="space-y-8" id="trending-list">
+                    <div class="news-item border-none" data-category="ekonomi">
+                        <span class="text-xs font-bold text-red-600">01</span>
+                        <a href="penulis.html" class="block font-bold hover:underline mt-1 italic">Inflasi Menurun di Kawasan Uni Eropa.</a>
+                    </div>
+                    <div class="news-item border-none" data-category="teknologi">
+                        <span class="text-xs font-bold text-red-600">02</span>
+                        <a href="penulis.html" class="block font-bold hover:underline mt-1 italic">Terobosan Baterai Solid-State Mulai Produksi Massal.</a>
+                    </div>
+                    <div class="news-item border-none" data-category="politik">
+                        <span class="text-xs font-bold text-red-600">03</span>
+                        <a href="penulis.html" class="block font-bold hover:underline mt-1 italic">Aliansi Maritim Baru Terbentuk di Pasifik.</a>
+                    </div>
+                    <div class="news-item border-none" data-category="teknologi">
+                        <span class="text-xs font-bold text-red-600">04</span>
+                        <a href="penulis.html" class="block font-bold hover:underline mt-1 italic">Satelit Quantum Pertama Berhasil Mengirim Data.</a>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-gray-50 p-6 rounded shadow-inner">
+                    <h5 class="font-bold text-xs uppercase mb-2">The Daily Insight</h5>
+                    <p class="text-xs text-gray-500 mb-4">Analisis global setiap pagi di email Anda.</p>
+                    <input type="email" placeholder="Alamat Email" class="w-full p-2 text-xs border border-gray-300 mb-2 focus:outline-none">
+                    <button class="w-full bg-black text-white py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-red-700 transition">Daftar</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 mt-20 py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="font-serif text-3xl font-black italic mb-6 uppercase">Global Insights</h2>
+            <div class="flex justify-center space-x-8 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                <a href="#" class="hover:text-black">Privacy Policy</a>
+                <a href="#" class="hover:text-black">Terms of Service</a>
+                <a href="#" class="hover:text-black">Contact</a>
+            </div>
+            <p class="text-[9px] text-gray-300 mt-10 uppercase tracking-[0.5em]">&copy; 2026 Global News Network</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fitur Pencarian Real-Time
+        const searchInput = document.getElementById('search-input');
+        const articles = document.querySelectorAll('.news-item');
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            articles.forEach(article => {
+                const text = article.innerText.toLowerCase();
+                article.style.display = text.includes(query) ? '' : 'none';
+            });
+        });
+
+        // Fitur Filter Kategori
+        function filterCat(cat) {
+            articles.forEach(article => {
+                const category = article.getAttribute('data-category');
+                if (cat === 'all' || category === cat) {
+                    article.style.display = '';
+                    article.style.animation = 'fadeIn 0.5s ease forwards';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+        }
+
+        // Animasi Fade In Sederhana
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

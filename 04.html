@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Insights | Berita Dunia Terpercaya</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS DALAM TUBUH HTML */
+        :root {
+            --brand-red: #e63946;
+            --ny-black: #121212;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: var(--ny-black);
+            scroll-behavior: smooth;
+        }
+
+        .font-serif { font-family: 'Playfair Display', serif; }
+
+        /* Estetika Garis Jurnalistik */
+        .border-double-b { border-bottom: 4px double #d1d5db; }
+        
+        /* Animasi Hover Artikel */
+        .news-card { transition: all 0.3s ease-in-out; }
+        .news-card:hover { opacity: 0.8; }
+
+        /* Ticker Breaking News */
+        .ticker-container {
+            background: var(--ny-black);
+            color: white;
+            overflow: hidden;
+            padding: 8px 0;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ticker-move {
+            display: inline-block;
+            white-space: nowrap;
+            animation: ticker 25s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Dropcap Profesional */
+        .dropcap::first-letter {
+            float: left;
+            font-size: 4.5rem;
+            line-height: 1;
+            font-weight: 900;
+            padding-right: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ticker-container">
+        <div class="ticker-move">
+            +++ Breaking: Terobosan Baterai Solid-State Mulai Produksi Massal di 2026 +++ Ekonomi Global Menunjukkan Tren Positif +++ Teknologi AI Mengubah Lanskap Medis Modern +++
+        </div>
+    </div>
+
+    <header class="max-w-7xl mx-auto px-4 py-8 text-center border-double-b mb-6">
+        <p class="text-[10px] font-bold tracking-[0.3em] uppercase mb-4 text-gray-500">Kamis, 15 Januari 2026</p>
+        <h1 class="font-serif text-5xl md:text-8xl font-black tracking-tighter italic cursor-pointer">GLOBAL INSIGHTS</h1>
+        
+        <nav class="mt-8 flex flex-wrap justify-center gap-6 text-[11px] font-bold uppercase tracking-widest border-t border-gray-100 pt-4">
+            <button onclick="filterNews('all')" class="hover:text-red-600 transition">Semua</button>
+            <button onclick="filterNews('teknologi')" class="hover:text-red-600 transition">Teknologi</button>
+            <button onclick="filterNews('ekonomi')" class="hover:text-red-600 transition">Ekonomi</button>
+            <button onclick="filterNews('politik')" class="hover:text-red-600 transition">Politik</button>
+            <div class="border-l pl-4 border-gray-300">
+                <input type="text" id="search" placeholder="CARI BERITA..." class="outline-none border-b border-transparent focus:border-black transition-all w-24 md:w-40">
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            
+            <div class="lg:col-span-8 space-y-12">
+                
+                <article class="news-card" data-cat="teknologi">
+                    <a href="04.html">
+                        <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1200" alt="EV Battery" class="w-full h-[450px] object-cover mb-4 grayscale hover:grayscale-0 transition-all duration-500">
+                        <span class="text-red-600 font-bold text-xs uppercase tracking-tighter">Laporan Utama</span>
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold leading-tight mt-2 mb-4 drop-shadow-sm">Masa Depan Transportasi: Bagaimana Baterai Solid-State Mengakhiri Era Bensin</h2>
+                    </a>
+                    <p class="text-gray-600 leading-relaxed dropcap">Dunia otomotif baru saja mencapai titik puncaknya. Dengan kepadatan energi tiga kali lipat dari baterai lithium-ion standar, teknologi solid-state menjanjikan pengisian daya dalam 5 menit untuk jarak tempuh 1000 kilometer.</p>
+                </article>
+
+                <hr class="border-gray-100">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <article class="news-card" data-cat="ekonomi">
+                        <a href="inflasi.html">
+                            <img src="https://images.unsplash.com/photo-1611974714158-f89d0ca1c9a6?w=600" class="w-full h-48 object-cover mb-4">
+                            <h3 class="font-serif text-2xl font-bold">Pasar Modal Global Merespons Positif Inovasi Energi Hijau</h3>
+                        </a>
+                    </article>
+                    <article class="news-card" data-cat="politik">
+                        <a href="penulis.html">
+                            <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600" class="w-full h-48 object-cover mb-4">
+                            <h3 class="font-serif text-2xl font-bold">Diplomasi Antariksa: Kesepakatan Baru Pemanfaatan Sumber Daya Bulan</h3>
+                        </a>
+                    </article>
+                </div>
+            </div>
+
+            <aside class="lg:col-span-4 border-l border-gray-100 pl-0 lg:pl-10 space-y-8">
+                <h4 class="font-bold border-b-2 border-black pb-1 mb-6 text-sm uppercase">Terpopuler</h4>
+                
+                <div class="news-card flex gap-4 items-start" data-cat="teknologi">
+                    <span class="text-3xl font-serif text-gray-200 font-black">04.</span>
+                    <div><a href="04.html" class="font-bold hover:text-red-600 leading-tight block">Terobosan Baterai Solid-State Mulai Produksi Massal.</a></div>
+                </div>
+
+                <div class="news-card flex gap-4 items-start" data-cat="ekonomi">
+                    <span class="text-3xl font-serif text-gray-200 font-black">05.</span>
+                    <div><a href="penulis.html" class="font-bold hover:text-red-600">Inflasi Zona Euro Turun ke Level Terendah dalam 5 Tahun.</a></div>
+                </div>
+
+                <div class="news-card flex gap-4 items-start" data-cat="teknologi">
+                    <span class="text-3xl font-serif text-gray-200 font-black">06.</span>
+                    <div><a href="penulis.html" class="font-bold hover:text-red-600">AI Generatif Kini Mampu Menggubah Simfoni Klasik Secara Mandiri.</a></div>
+                </div>
+
+                <div class="news-card flex gap-4 items-start" data-cat="politik">
+                    <span class="text-3xl font-serif text-gray-200 font-black">07.</span>
+                    <div><a href="penulis.html" class="font-bold hover:text-red-600">Kebijakan Baru Imigrasi Digital Disahkan di Singapura.</a></div>
+                </div>
+
+                <div class="news-card flex gap-4 items-start" data-cat="ekonomi">
+                    <span class="text-3xl font-serif text-gray-200 font-black">08.</span>
+                    <div><a href="penulis.html" class="font-bold hover:text-red-600"> Startup Agritech Raih Pendanaan 2 Miliar Dollar.</a></div>
+                </div>
+
+                <div class="news-card flex gap-4 items-start" data-cat="teknologi">
+                    <span class="text-3xl font-serif text-gray-200 font-black">09.</span>
+                    <div><a href="penulis.html" class="font-bold hover:text-red-600">Lensa Kontak Cerdas Dengan Fitur Augmented Reality Dirilis.</a></div>
+                </div>
+
+                <div class="news-card flex gap-4 items-start" data-cat="politik">
+                    <span class="text-3xl font-serif text-gray-200 font-black">10.</span>
+                    <div><a href="penulis.html" class="font-bold hover:text-red-600">Laporan Khusus: Kondisi Lingkungan Pasca Pakta Hijau Global.</a></div>
+                </div>
+
+                <div class="bg-gray-50 p-6 mt-10 rounded">
+                    <h5 class="font-bold text-xs uppercase mb-2">Newsletter harian</h5>
+                    <p class="text-xs text-gray-500 mb-4">Analisis mendalam langsung ke kotak masuk Anda.</p>
+                    <input type="email" placeholder="Email Anda" class="w-full text-xs p-2 border border-gray-300 rounded mb-2">
+                    <button class="w-full bg-black text-white text-[10px] font-bold py-2 uppercase tracking-widest">Berlangganan</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 mt-20 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="font-serif text-3xl font-black italic mb-4">GLOBAL INSIGHTS</h2>
+            <div class="flex justify-center gap-6 text-[10px] font-bold uppercase text-gray-400 mb-8">
+                <a href="#">Tentang Kami</a>
+                <a href="#">Kontak</a>
+                <a href="#">Arsip</a>
+                <a href="#">Bantuan</a>
+            </div>
+            <p class="text-[10px] text-gray-300 uppercase tracking-widest">&copy; 2026 Global Insights International Media Group. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fungsi Pencarian Real-Time
+        const searchInput = document.getElementById('search');
+        const cards = document.querySelectorAll('.news-card');
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                card.style.display = text.includes(query) ? 'flex' : 'none';
+                // Jika artikel besar, pakai display block
+                if (card.classList.contains('lg:col-span-8')) {
+                    if (text.includes(query)) card.style.display = 'block';
+                }
+            });
+        });
+
+        // Fungsi Filter Kategori
+        function filterNews(category) {
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-cat');
+                if (category === 'all' || cardCat === category) {
+                    card.style.opacity = '1';
+                    card.style.display = 'flex';
+                    if (card.querySelector('img') && card.classList.contains('lg:col-span-8')) {
+                        card.style.display = 'block';
+                    }
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Efek transisi saat scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 200) {
+                nav.classList.add('opacity-80');
+            } else {
+                nav.classList.remove('opacity-80');
+            }
+        });
+    </script>
+</body>
+</html>
